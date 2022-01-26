@@ -9,19 +9,27 @@
 <body>
 
     <canvas width="600" height="400">
-    <!-- limite máximo do seu canvas largura de 600
-    altura de 400 -->
+    <!-- inicia uma tela de desenho, 
+	limite máximo do seu canvas largura de 600 altura de 400 -->
     </canvas>
 
     <script>
 
         let tela = document.querySelector('canvas')
+        // inicia a tela de desenho
+
         let pincel = tela.getContext('2d')
+        // diz qual será o contexto do desenho
 
         pincel.fillStyle = 'red'
-        pincel.fillRect(0, 0, 600, 400)
+        // qual a cor do desenho]
+        // (precisa ser iniciado antes do preenchimento FILL)
 
+        pincel.fillRect(0, 0, 600, 400)
+        // onde começa largura e altura na tela e 
+        // qual o tamanho (respeitando o tamanho total do canvas)
     </script>
 
 </body>
+
 </html>
