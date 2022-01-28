@@ -15,19 +15,55 @@
 
     <script>
 
-        let tela = document.querySelector('canvas')
+        let tela = document.querySelector('canvas');
         // inicia a tela de desenho
 
-        let pincel = tela.getContext('2d')
+        let pincel = tela.getContext('2d');
         // diz qual será o contexto do desenho
 
-        pincel.fillStyle = 'red'
-        // qual a cor do desenho]
-        // (precisa ser iniciado antes do preenchimento FILL)
+        pincel.fillStyle = 'lightgrey';
+        pincel.fillRect(0,0,600,400);
+        // Pinta por completo o guadro em cinza
 
-        pincel.fillRect(0, 0, 600, 400)
-        // onde começa largura e altura na tela e 
-        // qual o tamanho (respeitando o tamanho total do canvas)
+        pincel.fillStyle = 'green'
+        pincel.fillRect(0, 0, 200, 400)
+        // Pinta uma faixa verde
+
+        pincel.fillStyle = 'red';
+        pincel.fillRect(400, 0, 200, 400);
+        // Pinta uma faixa vermelha
+
+
+        // Fazendo um triangulo //
+        pincel.fillStyle = 'yellow'
+        pincel.beginPath()
+        // Pincel irá iniciar um caminho
+
+        pincel.moveTo(300, 200)
+        // Pincel irá começar nesse ponto
+
+        pincel.lineTo(200, 400)
+        // Para onde irá se mover apartir do começo
+
+        pincel.lineTo(400, 400)
+        // Para onde irá se mover apartir do começo
+
+        pincel.fill()
+        // pede para preencher o que foi desenhado
+
+        // Fazendo uma Bola //
+        pincel.fillStyle = 'blue'
+        
+        pincel.beginPath()
+        // Novo caminho para criar um novo objeto
+        // se não seria usado o caminho anterior
+
+        pincel.arc(300, 150, 50, 0, 2 * 3.14)
+        // X, Y, tamanho do raio, angulo inicial, angulo final
+        
+        pincel.fill()
+        // Pencher a bola (pintar o desenho)
+
     </script>
 
 </body>
