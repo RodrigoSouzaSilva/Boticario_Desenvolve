@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let tela = document.querySelector('canvas')
+        let pincel = tela.getContext('2d')
+
+        pincel.fillStyle = 'grey'
+        pincel.fillRect(0, 0, 600, 400)
+
+        function desenhaCirculo(evento) {
+
+            let eixoX = evento.pageX - tela.offsetLeft
+            // offsetLeft - começa a esquerda com 0
+
+            let eixoY = evento.pageY - tela.offsetTop
+            // offsetTop - começa ao topp com 0
+
+            pincel.beginPath()
+            pincel.fillStyle = 'blue'
+            pincel.arc(eixoX, eixoY, 10, 0, 2 * 3.14)
+            pincel.fill()
+
+            console.log('x = '+eixoX+' | y = ' +eixoY);
+            // Retorna o valor númerico de onde o
+            // ponteiro do mouse foi clicado na tela
+        }
+
+        tela.onclick = desenhaCirculo
+        // Ao clicar no parte do canvas
+        // executa a função exibeAlerta
+
+    </script>
+    
+</body>
+</html>
